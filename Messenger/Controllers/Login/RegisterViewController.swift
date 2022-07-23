@@ -219,17 +219,17 @@ extension RegisterViewController: UIImagePickerControllerDelegate, UINavigationC
         present(actionSheet, animated:  true)
     }
     
-    func presentCamera() {
+    func presentPhotoPicker() {
         let vc = UIImagePickerController()
-        vc.sourceType = .camera
+        vc.sourceType = .photoLibrary
         vc.delegate = self
         vc.allowsEditing = true
         present(vc, animated: true)
     }
     
-    func presentPhotoPicker() {
+    func presentCamera() {
         let vc = UIImagePickerController()
-        vc.sourceType = .photoLibrary
+        vc.sourceType = .camera
         vc.delegate = self
         vc.allowsEditing = true
         present(vc, animated: true)
@@ -244,6 +244,7 @@ extension RegisterViewController: UIImagePickerControllerDelegate, UINavigationC
         self.profilePicImageView.image = selectedImage
     }
     
+    //Optional
     func imagePickerControllerDidCancel(_ picker: UIImagePickerController) {
         picker.dismiss(animated: true, completion: nil)
     }
